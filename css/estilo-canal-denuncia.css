@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'frutiger_lt_45_lightregular';
+    src: url('lte50327-webfont.eot');
+    src: url('lte50327-webfont.eot?#iefix') format('embedded-opentype'),
+         url('lte50327-webfont.svg') format('svg'),
+         url('lte50327-webfont.woff') format('woff'),
+         url('lte50327-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'frutiger_lt_55_romanregular';
+    src: url('lte50331-webfont.eot');
+    src: url('lte50331-webfont.eot?#iefix') format('embedded-opentype'),
+        url('lte50331-webfont.svg') format('svg'),
+         url('lte50331-webfont.woff') format('woff'),
+         url('lte50331-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'frutiger_lt_65_boldregular';
+    src: url('lte50329-webfont.eot');
+    src: url('lte50329-webfont.eot?#iefix') format('embedded-opentype'),
+         url('lte50329-webfont.svg') format('svg'),
+         url('lte50329-webfont.woff') format('woff'),
+         url('lte50329-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'frutiger_lt_55_romanbold';
+    src: url('lte50333-webfont.eot');
+    src: url('lte50333-webfont.eot?#iefix') format('embedded-opentype'),
+         url('lte50333-webfont.svg') format('svg'),
+         url('lte50333-webfont.woff') format('woff'),
+         url('lte50333-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*Canal de Denúncia Inicio*/
+
+#contentRegistroDenuncias{
+    background-color: white;
+    /* width: 75%; */
+    /* margin: 0 auto; */
+    /* padding-left: 60px;     */
+    text-align: left;
+    padding-top: 40px;
+    font-family: 'frutiger_lt_45_lightregular';
+    font-size:15px;
+}
+
+#contentCanalDenuncias{
+    background-color: white;
+    width: 72%;
+    margin: 0 auto;
+    padding-left: 60px;    
+    text-align: left;
+    padding-top: 40px;
+    font-family: 'frutiger_lt_45_lightregular';
+    font-size:15px;
+    margin-top: -8px;
+    margin-bottom:60px;
+}
+
+#contentRegistroDenuncias h1{
+    font-family: 'frutiger_lt_55_romanbold';
+    color:#132d4e;
+    margin-left: -10px;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    width: 905px;
+    padding-bottom: 15px;
+}
+
+#contentCanalDenuncias h1{
+    font-family: 'frutiger_lt_55_romanbold';
+    color:#132d4e;
+    margin-left: -10px;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    width: 905px;
+    padding-bottom: 15px;
+}
+
+.EstiloMsg{
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #ed1c24;
+    display: block; 
+    position: relative; 
+    top: 10px; 
+    font-family: 'frutiger_lt_45_lightregular';
+}
+
+#modalBox {
+    position: relative;
+    background: #FFFFFF;
+    height: 100px;
+    width: 425px;    
+    top: 500px;
+    z-index: 100;    
+    border: 1px #808080;
+    font-size: 15px;
+    -moz-box-shadow: 0 0 5px #808080;
+    -webkit-box-shadow: 0 0 5px #808080;
+    box-shadow: 0 0 15px #726e6e;    
+    margin: 0 auto;
+}
+
+#coverDenuncia {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #808080;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display:none;
+}
+
+body{
+    background: #fff url(../Images/bg-site-canal.jpg) no-repeat center top;
+}
+
+/*Canal de Denúncia Fim*/
+
+/* FOOTER */
+
+footer{
+    background: #ebebeb;
+    width: 925px;
+    float: left;
+    height: 160px;
+    padding: 8px 45px 0;
+    position: relative;
+    margin-left: 215px;
+    border-radius: 0 15px 15px 15px;
+}
+
+footer img{
+    float:left;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.info-left{
+    float:left; 
+    padding:5px; 
+    width:365px; 
+    font-size: 12px;    
+}
+
+.info-rigth{
+    float:left; 
+    padding:5px; 
+    width:365px; 
+    font-size: 12px;
+}
+
+
+.barra-footer {
+    width: 834px; 
+    background: #d3d3d3; 
+    float: left; 
+    padding: 0px 20px 10px; 
+    position: absolute;
+    bottom: 0;
+    font-size:11px
+}
+
+.barra-footer img { 
+    padding: 15px 0 0 0;
+    float: left;
+    height: 30px;
+}
+
+.barra-footer span {
+    margin:13px 0 0 100px;
+    float:left;
+}
+
+/* /FOOTER */

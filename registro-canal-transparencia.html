@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MM7GPHV');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>
+        Canal Transparência
+    </title>
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/datepicker.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/estilo-canal-denuncia.css" rel="stylesheet" />
+    <script src="js/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/Scripts/jquery-ui.js"></script>
+    <script src="js/datepicker-pt-BR.js"></script>
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM7GPHV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="modalBox" style="display: none">
+        <a id="popupBoxClose">
+            <img id="imgClose" src="../Images/ico-fechar.png" />
+        </a>
+        <br />
+        <div id="divForModalBox" style="text-align: center; font-size: 18px; color: black; font-family: Calibri; font-weight: bold; margin-top: 15px"></div>
+        <br />
+    </div>
+    <form name="formRegistroDenuncias" method="post" action="registro-canal-transparencia.aspx" id="formRegistroDenuncias" class=""
+        role="form" enctype="multipart/form-data">
+        <div>
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzY0MDEyNjY4ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WCwUTcmJ0Q29tSWRlbnRpZmljYWNhbwUTcmJ0U2VtSWRlbnRpZmljYWNhbwUTcmJ0U2VtSWRlbnRpZmljYWNhbwUXcmJ0Q29udGludWFPY29ycmVuZG9TaW0FF3JidENvbnRpbnVhT2NvcnJlbmRvTmFvBRdyYnRDb250aW51YU9jb3JyZW5kb05hbwURcmJ0Q29uZmlybUNlcnRlemEFEnJidENvbmZpcm1Qb3NzaXZlbAUScmJ0Q29uZmlybVBvc3NpdmVsBQ9yYnRDb25maXJtT3V2aXUFD3JidENvbmZpcm1PdXZpdQaF1vanRLhWtFTVxvKUhwmxO2SJ"
+            />
+        </div>
+
+        <div>
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FF03C54E" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWJgKttt2EBwK6xv/eDQLf1ozKDALChISFCwKY+7bZCAKL+4qxCwKE8/26DALat4bWBAKYwdmyDQLS38L9CwK6xKnCDgKzusC/BQLzirmKCQL76cLPCQLP4uT9BgLR9//bDQLFv4niBwLBmcPoDQLbrfvqAgKRndrwDwKykfmlCAKW0r/iDQKah//jCAKBhJvSDALDhMzECwK66eK9BwLGkMupAQKHw9b/CgKUtsn3BgLjyrmyBAKfzJO9CgKd5oyKAQLa2cD2DQLChueFDwKhuevnDwKXrKaBBgL1v63lDgLj2sTvD7/t/tYvGPwJ4uKUDVUedw8o4va3"
+            />
+        </div>
+
+
+
+
+
+        <div class="container" id="contentRegistroDenuncias">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="Images/logo-20-anos-cred-system.gif" />
+                    <h1>Registro da Comunicação</h1>
+                </div>
+            </div>
+            <div class="row"  style="margin-top: 50px">
+                <div class="col-md-12">
+                    <span id="lblIdentificacao">
+                        <strong>Você gostaria de se identificar para área de Compliance da Cred-System?</strong>
+                    </span>
+                    <br />
+                    <div class="">
+                        <div class="radio">
+                            <label for="rbtComIdentificacao">
+                                <input id="rbtComIdentificacao" type="radio" name="gpIdentificacao" value="rbtComIdentificacao" checked="checked" onclick="showDiv();"/>
+                                Sim
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="rbtSemIdentificacao">
+                                <input id="rbtSemIdentificacao" type="radio" name="gpIdentificacao" value="rbtSemIdentificacao" onclick="hideDiv();" />
+                                Não
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="opcional" class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label id="lblNome">Nome completo*</label>
+                            <input name="txtNome" type="text" maxlength="60" id="txtNome" class="form-control" />
+                            <div id="divMenssagemNome" class="EstiloMsg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label id="lblCpf"> CPF*</label>
+                            <input name="txtCpf" type="text" maxlength="14" id="txtCpf" class="form-control" onkeypress="javascript: mascara(this, cpf_mask)"
+                            />
+                            <div id="divMenssagemCpf" class="EstiloMsg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label id="lblTel">Telefone*</label>
+                            <input name="txtTel" type="text" id="txtTel" class="form-control" />
+                            <div id="divMenssagemTel" class="EstiloMsg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label id="lblEmail">E-mail*</label>
+                            <input name="txtEmail" type="text" id="txtEmail" class="form-control" />
+                            <div id="divMenssagemEmail" class="EstiloMsg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label id="lblRelacao"><strong>Qual a sua relação com a Cred-System?</strong></label>
+                        <select name="ddlTipoColaborador" id="ddlTipoColaborador" class="form-control">
+                            <option selected="selected" value="Selecione">Selecione</option>
+                            <option value="Colaborador">Colaborador</option>
+                            <option value="Colaborador de Empresa Parceira">Colaborador de Empresa Parceira</option>
+                            <option value="Cliente">Cliente</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                        <div id="divMenssagemTipoColaborador" class="EstiloMsg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label id="lblTipoDenuncia">
+                            <strong> Que tipo de situação você está comunicando?</strong>
+                        </label>
+                        <select name="ddlTipoDenuncia" id="ddlTipoDenuncia" class="form-control">
+                            <option selected="selected" value="Selecione">Selecione</option>
+                            <option value="Assédio">Ass&#233;dio</option>
+                            <option value="Conduta">Conduta</option>
+                            <option value="Conflito de Interesse">Conflito de Interesse</option>
+                            <option value="Corrupção">Corrup&#231;&#227;o</option>
+                            <option value="Discriminação">Discrimina&#231;&#227;o</option>
+                            <option value="Fraude">Fraude</option>
+                            <option value="Furto/Roubo">Furto/Roubo</option>
+                            <option value="Lavagem de Dinheiro">Lavagem de Dinheiro</option>
+                            <option value="Segurança">Seguran&#231;a</option>
+                            <option value="Outros">Outros</option>
+                
+                        </select>
+                        <div id="divMenssagemTipoDenuncia" class="EstiloMsg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <br />
+
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+        
+            </div>
+        </div>
+            <div class="form-group">
+                
+                <br />
+                <br />
+            </div>
+            <div class="form-group">
+                
+                <br />
+                <br />
+            </div>
+            <div class="form-group">
+                <span id="lblDescricao">
+                    <strong>Descreva detalhadamente a situação. Se possível, preencha todos os campos:</strong>
+                </span>
+                <br />
+            </div>
+            <div class="form-group">
+                <span id="lblResumo">
+                    <strong>Descreva o que ocorreu:</strong>
+                </span>
+                <br />
+                <textarea name="txtResumo" rows="5" cols="20" id="txtResumo" class="form-control" style="height:100px;width:500px;"></textarea>
+                <div id="divMenssagemResumo" class="EstiloMsg"></div>
+                <br />
+                <br />
+                <span id="lblOnde">
+                    <strong>Onde esta situação ocorreu?</strong>
+                </span>
+                <br />
+                <textarea name="txtOnde" rows="5" cols="20" id="txtOnde" class="form-control" style="height:100px;width:500px;"></textarea>
+                <div id="divMenssagemOnde" class="EstiloMsg"></div>
+                <br />
+                <br />
+                <div class="form-group" style="width: 300px; position: relative; left: 15px">
+                    <span id="qndOcorreu">
+                        <strong>Quando esta situação ocorreu?</strong>
+                    </span>
+                    <br />
+                    <div>
+                        <input name="dtOcorrencia" type="text" id="dtOcorrencia" class="form-control" name="data" />
+                    </div>
+                    <div id="divMenssagemQuando" class="EstiloMsg"></div>
+                    <br />
+                </div>
+                <div class="form-group" style="width: 300px; position: relative; left: 18px">
+                    <span id="lblContinuaOcorrendo">
+                        <strong>Continua ocorrendo?</strong>
+                    </span>
+                    <br />
+                    <div class="checkbox">
+                        <input id="rbtContinuaOcorrendoSim" type="radio" name="gpContinuaOcorrendo" value="rbtContinuaOcorrendoSim" checked="checked"
+                        />
+                        <label for="rbtContinuaOcorrendoSim">Sim</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="rbtContinuaOcorrendoNao" type="radio" name="gpContinuaOcorrendo" value="rbtContinuaOcorrendoNao" />
+                        <label for="rbtContinuaOcorrendoNao">Nao</label>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-group" style="width: 380px; position: relative; left: 15px">
+                        <span id="lblEnvolvidos">
+                            <strong>Cite pessoas e/ou empresas envolvidas:</strong>
+                        </span>
+                        <br />
+                        <textarea name="txtEnvolvidos" rows="5" cols="20" id="txtEnvolvidos" class="form-control" style="height:80px;width:300px;"></textarea>
+                        <br />
+                        <div id="divMenssagemEnvolvidos" class="EstiloMsg"></div>
+                        <br />
+                        <br />
+                        <span id="lblConsequencias">
+                            <strong>Descreva as consequências da situação relatada:</strong>
+                        </span>
+                        <span id="ErroMessageForConsequencias" class="has-error"></span>
+                        <br />
+                        <textarea name="txtConsequencias" rows="5" cols="20" id="txtConsequencias" class="form-control" style="height:80px;width:300px;"></textarea>
+                        <br />
+                        <div id="divMenssagemConsequencias" class="EstiloMsg"></div>
+                    </div>
+                    <br />
+                    <div class="form-group" style="width: 380px; position: relative; left: 15px">
+                        <span id="lblConfirm">
+                            <strong>Sobre a situação descrita, você tem:</strong>
+                        </span>
+                        <br />
+                        <div class="checkbox">
+                            <input id="rbtConfirmCerteza" type="radio" name="gpConfirm" value="rbtConfirmCerteza" checked="checked" />
+                            <label for="rbtConfirmCerteza">Certeza</label>
+                        </div>
+                        <div class="checkbox">
+                            <input id="rbtConfirmPossivel" type="radio" name="gpConfirm" value="rbtConfirmPossivel" />
+                            <label for="rbtConfirmPossivel">Acha possível</label>
+                        </div>
+                        <div class="checkbox">
+                            <input id="rbtConfirmOuviu" type="radio" name="gpConfirm" value="rbtConfirmOuviu" />
+                            <label for="rbtConfirmOuviu">Ouviu dizer</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="position: relative; left: 15px">
+                    <span id="lblSuperiorCiente">
+                        <strong>Você sabe informar se algum Diretor, Gerente, Coordenador, ou Supervisor da Cred-System, está ciente
+                            da situação descrita?</strong>
+                    </span>
+                    <br />
+                    <textarea name="txtSuperiorCiente" rows="5" cols="20" id="txtSuperiorCiente" class="form-control" style="height:100px;width:500px;"></textarea>
+                    <br />
+                    <div id="divMenssagemSuperiorCiente" class="EstiloMsg"></div>
+                    <br />
+                </div>
+                <div class="form-group" style="position: relative; left: 15px">
+                    <span id="lblSuperiorEnvolvido">
+                        <strong>Você sabe informar se algum Diretor, Gerente, Coordenador ou Supervisor da Cred-System, está envolvido
+                            diretamente com a situação relatada?</strong>
+                    </span>
+                    <br />
+                    <textarea name="txtSuperiorEnvolvido" rows="5" cols="20" id="txtSuperiorEnvolvido" class="form-control" style="height:100px;width:500px;"></textarea>
+                    <br />
+                    <div id="divMenssagemSuperiorEnvolvido" class="EstiloMsg"></div>
+                    <br />
+                </div>
+                <br />
+                <div class="form-group" style="position: relative; left: 15px">
+                    <span id="lblOutrasPessoas">
+                        <strong>Outras pessoas além de você tem conhecimento ou presenciaram a situação relatada? Se sim, indicá-las:</strong>
+                    </span>
+                    <br />
+                    <textarea name="txtOutrasPessoas" rows="5" cols="20" id="txtOutrasPessoas" class="form-control" style="height:100px;width:500px;"></textarea>
+                    <br />
+                    <div id="divMenssagemOutrasPessoas" class="EstiloMsg"></div>
+                    <br />
+                </div>
+                <span id="lblEvidencias">
+                    <strong>Existem evidências que comprovam a situação relatada? Se sim, anexar ou indicar onde e como podem ser
+                        obtidas.
+                    </strong>
+                </span>
+                <br />
+                <br />
+                <input type="file" name="carregaAnexo" id="carregaAnexo" class="btn btn-default btn-file" multiple="true" />
+                <br />
+                <textarea name="txtDescEvidencia" rows="5" cols="20" id="txtDescEvidencia" class="form-control" style="height:100px;width:500px;"></textarea>
+                <br />
+                <input type="submit" name="btnEnviaDenuncia" value="Enviar Comunicação" id="btnEnviaDenuncia" class="btn btn-primary" />
+                <br />
+                <br />
+                <span id="lblOutput"></span>
+            </div>
+        </div>
+
+
+
+    </form>
+
+
+
+    <script type="text/javascript">
+
+        function showDiv() {
+            opcional.style.display = 'block';
+        }
+
+        function hideDiv() {
+            opcional.style.display = 'none';
+        }
+
+        function mascara(o, f) {
+
+            v_obj = o
+            v_fun = f
+            setTimeout("execmascara()", 1)
+
+        };
+
+        function execmascara() {
+            v_obj.value = v_fun(v_obj.value)
+        };
+
+        function cpf_mask(v) {
+            v = v.replace(/\D/g, "")                 //Remove tudo o que não é dígito
+            v = v.replace(/(\d{3})(\d)/, "$1.$2")    //Coloca ponto entre o terceiro e o quarto dígitos
+            v = v.replace(/(\d{3})(\d)/, "$1.$2")    //Coloca ponto entre o setimo e o oitava dígitos
+            v = v.replace(/(\d{3})(\d)/, "$1-$2")   //Coloca ponto entre o decimoprimeiro e o decimosegundo dígitos
+            return v
+        };
+
+        $('#popupBoxClose').click(function () {
+            unloadPopupBox();
+        });
+
+        function unloadPopupBox() {
+            $('#modalBox').fadeOut("slow");
+            $("#container").css({
+                "opacity": "1"
+            });
+
+            window.location.href = "registro-canal-transparencia.aspx"
+        }
+
+    </script>
+
+
+    <div id="coverDenuncia" style="display: none"></div>
+    <footer>
+        <img src="../Images/ico-footer.png" />
+        <div class="info-left">
+            <span>
+                <strong>Lojista,</strong> ligue agora para:</span>
+            <br />
+            <br />
+            <strong>11 3350.1901</strong> (Grande SP), ou
+            <strong>0800.770.1380</strong> (Demais localidades)
+            <br/>
+            <span>
+                <strong>Horário de Atendimento:</strong> De segunda a sábado, das 8h às 22h.
+                <Br> Domingos e feriados, das 9h às 20h.</span>
+        </div>
+        <div class="info-rigth">
+            <span>
+                <strong>Consumidor,</strong> ligue agora para:</span>
+            <br />
+            <br />
+            <strong>11 3357.1850</strong> (Grande SP), ou
+            <strong>0800.770.1280</strong> (Demais localidades)
+            <br/>
+            <span>
+                <strong>Horário de Atendimento:</strong> De segunda a sábado, das 8h às 22h.
+                <Br> Domingos e feriados, das 9h às 20h.</span>
+        </div>
+        <div class="barra-footer">
+            <img src="../Images/logo-footer.png" alt="CredSystem">
+            <span>&copy; 2014 – Cred-System / Todos os direitos reservados. Proibida cópia total ou parcial deste conteúdo sem
+                autorização.</span>
+        </div>
+    </footer>
+</body>
+
+
+</html>
