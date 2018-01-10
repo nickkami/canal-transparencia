@@ -73,12 +73,12 @@
 #contentRegistroDenuncias h1{
     font-family: 'frutiger_lt_55_romanbold';
     color:#132d4e;
-    margin-left: -10px;
+    /* margin-left: -10px; */
     font-size: 24px;
     font-weight: normal;
     text-transform: uppercase;
     border-bottom: 1px solid #ccc;
-    width: 905px;
+    /* width: 905px; */
     padding-bottom: 15px;
 }
 
@@ -136,22 +136,27 @@ body{
 
 /*Canal de Denúncia Fim*/
 
+/*FORMULARIO CANAL TRANSPARENCIA*/
+.box-descricao{
+    margin-top: 30px;
+}
+/*//FORMULARIO CANAL TRANSPARENCIA*/
 /* FOOTER */
 
 footer{
     background: #ebebeb;
-    width: 925px;
-    float: left;
-    height: 160px;
+    /* width: 925px;
+    float: left; */
+    /* height: 160px; */
     padding: 8px 45px 0;
-    position: relative;
-    margin-left: 215px;
+    /* position: relative;
+    margin-left: 215px; */
     border-radius: 0 15px 15px 15px;
 }
 
 footer img{
     float:left;
-    margin-left: 25px;
+    margin-left: 15px;
     margin-right: 25px;
 }
 
@@ -171,24 +176,27 @@ footer img{
 
 
 .barra-footer {
-    width: 834px; 
+    /* width: 834px;  */
     background: #d3d3d3; 
-    float: left; 
-    padding: 0px 20px 10px; 
-    position: absolute;
-    bottom: 0;
+    /* float: left;  */
+    /* padding: 0px 20px 10px;  */
+    /* position: absolute;
+    bottom: 0; */
     font-size:11px
 }
 
 .barra-footer img { 
-    padding: 15px 0 0 0;
+    padding: 8px 0 8px 0;
     float: left;
     height: 30px;
 }
 
 .barra-footer span {
-    margin:13px 0 0 100px;
-    float:left;
+    /* margin:13px 0 0 100px;
+    float:left; */
+    line-height: 30px;
 }
-
+.info{
+    font-size: 12px;
+}
 /* /FOOTER */
